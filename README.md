@@ -35,4 +35,52 @@ Roxbury 14S
 Tremont 14S
 ```
 
-You are curious to learn more about the 
+You are curious to learn how the clients are rated by grantees on the 9 questions in the survey:
+```
+fldimp
+undrfld
+advknow
+pubpol
+comimp
+undrwr
+undrsoc
+orgimp
+undrorg
+```
+
+Respondents answer these survey questions on a scale of 1 to 7, with a higher number indicating a more positive rating. If respondents indicate that the question is not applicable to them, their responses will be coded as 77. If respondents indicate that they are not sure about the question's answers, their responses will be coded as 88. As such, in each of the 9 question columns in `xl.csv`, there are 10 unique values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `77`, `88`, and a blank value.
+
+Since you're not interested in the `77` and `88` responses, you choose to recode these values as blank.
+
+After recoding , you calculate the mean rating at the client level for each of the 9 questions so you can compare the client ratings side by side. For example, the following table format shows how the 9 clients are rated on the `comimp` question:
+
+Client           | comimp
+-----------------|-------------------
+Arlington 14S    | 6.5151515151515156
+Boylston 14S     | 5.4745762711864403
+Clarendon 14S    | 5.7875647668393784
+Dartmouth 14S    | 6.2045454545454541
+Kenmore 14S      | 5.7307692307692308
+Marlborough 14S  | 4.7705627705627709
+Peabody 14S      | 5.8947368421052628
+Roxbury 14S      | 6.2884615384615383
+Tremont 14S      | 5.7445652173913047
+
+## Task 1
+Read file `xl.csv`, look at the 9 question columns above, and recode any `77` and `88` values as blank. After recoding, calculate the mean rating for each funder for each of the 9 questions. Save your output as `mean.csv`. You may refer to `exercise1/output/mean.csv` for a preview of how the output file should look like.
+
+*Hint*: If you're familiar with `pandas`, the following line should help:
+```python
+# data is the recoded DataFrame with the 9 question columns
+# that you're interested in
+mean = data.groupby('fdntext').mean()
+```
+
+## Task 2
+You're also interested in knowing more about the descriptive statistics of the client ratings; you want to know the highest, lowest, median, and quartile ratings for each of the 9 questions. Generate a CSV file `stats.csv` that will include these descriptive statistics. Refer to `exercise1/output/stats.csv` for a preview of how the output file should look like.
+
+*Hint*: Using `pandas`, the following line should help:
+```python
+# mean is the DataFrame generated from Task 1
+stats = mean.describe()
+```
