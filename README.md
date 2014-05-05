@@ -19,7 +19,20 @@ To submit your codes, first, fork this repo, add your own program files in the `
 If you have any questions regarding the assessment, please feel free to reach out to Mike Nguyen at miken@effectivephilanthropy.org.
 
 # Exercise 1
-In spring 2014, CEP helped 9 foundation clients administered a survey to their grantees. At the end of the survey, CEP analysts cleaned and sent the data to you in a CSV format. The file is called `xl.csv` and saved in the `exercise1/input` folder. This file contains all survey responses, with each column representing a survey question and each row a set of responses from a grantee.
+In spring 2014, CEP helped 9 foundation clients administer a survey to their grantees. At the end of the survey, CEP analysts cleaned and sent the data to you in a CSV format. The file is called `xl.csv` and saved in the `exercise1/input` folder. This file contains all survey responses, with each column representing a survey question and each row a set of responses from a grantee.
 
-In this file, the column `fdntext` provides the client code for a given survey respondent, i.e., helps identify whose foundation the grantee respondent is 
+In this file, the column `fdntext` provides the client code for a given survey respondent, i.e., helps identify from which foundation the respondent receives the grant from. The 9 foundation clients have the following 9 codes:
 
+```
+Arlington 14S
+Boylston 14S
+Clarendon 14S
+Dartmouth 14S
+Kenmore 14S
+Marlborough 14S
+Peabody 14S
+Roxbury 14S
+Tremont 14S
+```
+
+You are curious to learn more about the 
