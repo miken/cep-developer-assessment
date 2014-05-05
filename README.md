@@ -7,7 +7,7 @@ The assessment has three exercises that test a candidate's ability to manipulate
 
 It is recommended that the candidate has familiarity with the following software packages: `numpy`, `scipy`, and `pandas`. These packages will simplify the work required in the assessment.
 
-If you have any questions regarding the assessment, please feel free to reach out to Mike Nguyen at miken@effectivephilanthropy.org.
+If you have any questions regarding the assessment, please feel free to reach out to [Mike Nguyen](github.com/miken) at miken@effectivephilanthropy.org.
 
 For more information about CEP and our work, please visit effectivephilanthropy.org
 
