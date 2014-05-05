@@ -3,9 +3,9 @@ cep-developer-assessment
 
 This assessment contains three exercises that will help CEP evaluate a candidate's skills in software development that are relevant to CEP's work. Besides efficiency, CEP also looks for clarity in code submissions.
 
-The assessment has three exercises that test a candidate's ability to work with CSV files, manipulate CSV data, and write JSON output files using existing Python libraries.
+The assessment has three exercises that test a candidate's ability to work with CSV files, manipulate CSV data, and write JSON output files using existing Python packages.
 
-It is recommended that the candidate has familiarity with the following software packages: `numpy`, `scipy`, and `pandas`.
+It is recommended that the candidate has familiarity with the following software packages: `numpy`, `scipy`, and `pandas`. These packages will simplify the work required in the assessment.
 
 # Instructions
 
