@@ -109,3 +109,18 @@ Roxbury 14S      | 6.2884615384615383 | 83.33333333 |
 Tremont 14S      | 5.7445652173913047 | 38.88888889 |
 
 Given the `mean.csv` file that you have generated in Exercise 1, now stored in `exercise2/input/mean.csv`, generate a CSV file `pct.csv` that stores the percentile ratings for each client for the 9 survey questions. Refer to `exercise2/output/pct.csv` for a preview of how the output file should look like.
+
+**Hint**: `scipy` has a function called [percentileofscore](http://docs.scipy.org/doc/scipy-0.7.x/reference/generated/scipy.stats.percentileofscore.html) that should make percentile calculation easy:
+```python
+from scipy.stats import percentileofscore
+
+# If you have the list of 9 client ratings stored in rating_list
+# you can do the following loop:
+percentile_list = []
+for r in rating_list:
+    percentile = percentileofscore(rating_list, r, kind='mean')
+    percentile_list.append(percentile)
+    
+# Now you have 9 percentile ranks for a given question
+# stored in percentile_list
+```
