@@ -5,7 +5,7 @@ This assessment evaluates a candidate's software development skills relevant to 
 
 The assessment has three exercises that test a candidate's ability to manipulate CSV data and write JSON outputs using existing Python packages.
 
-It is recommended that the candidate has familiarity with the following software packages: `numpy`, `scipy`, and `pandas`. These packages will simplify the work required in the assessment.
+It is recommended that the candidate has familiarity with statistics and the following Python packages: `numpy`, `scipy`, and `pandas`.
 
 * [Instructions](#instructions)
 * [Exercise 1](#exercise-1)
@@ -91,3 +91,20 @@ You're also interested in knowing more about the descriptive statistics of the c
 # mean is the DataFrame generated from Task 1
 stats = mean.describe()
 ```
+
+# Exercise 2
+Next, given the set of 9 ratings per question, you're interested in finding out the [percentile](http://en.wikipedia.org/wiki/Percentile) of each client rating. For example, the following table shows the client ratings and their percentiles for the `comimp` question.
+
+Client           | comimp             | comimp_pct  |     
+-----------------|--------------------|-------------|
+Arlington 14S    | 6.5151515151515156 | 94.44444444 |
+Boylston 14S     | 5.4745762711864403 | 16.66666667 |
+Clarendon 14S    | 5.7875647668393784 | 50          |
+Dartmouth 14S    | 6.2045454545454541 | 72.22222222 |
+Kenmore 14S      | 5.7307692307692308 | 27.77777778 |
+Marlborough 14S  | 4.7705627705627709 | 5.555555556 |
+Peabody 14S      | 5.8947368421052628 | 61.11111111 |
+Roxbury 14S      | 6.2884615384615383 | 83.33333333 |
+Tremont 14S      | 5.7445652173913047 | 38.88888889 |
+
+Given the `mean.csv` file that you have generated in Exercise 1, now stored in `exercise2/input/mean.csv`, generate a CSV file `pct.csv` that stores the percentile ratings for each client for the 9 survey questions. Refer to `exercise2/output/pct.csv` for a preview of how the output file should look like.
