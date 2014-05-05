@@ -12,7 +12,7 @@ It is recommended that the candidate has familiarity with the following software
 For each exercise folder, there are three subfolders within:
 
 * `input`: This folder contains all input files to be read by your program
-* `output`: This folder contains output files that your program ought to produce
+* `output`: This folder contains "model" output files that your program ought to produce. For example, in exercise 1, there are two files in the `output` folder: `mean.csv` and `stats.csv`. Your program is expected to create these two files in the exact format and layout.
 * `submissions`: This is where you can save your program in the format `your_name.py`
 
 
