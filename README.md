@@ -5,12 +5,13 @@ This assessment evaluates a candidate's software development skills relevant to 
 
 The assessment has three exercises that test a candidate's ability to manipulate CSV data and write JSON outputs using existing Python packages.
 
-It is recommended that the candidate has familiarity with the following software packages: `numpy`, `scipy`, and `pandas`. These packages will simplify the work required in the assessment.
+It is recommended that the candidate has familiarity with statistics and the following Python packages: `numpy`, `scipy`, and `pandas`.
 
 * [Instructions](#instructions)
 * [Exercise 1](#exercise-1)
   * [Task 1](#task-1)
   * [Task 2](#task-2)
+* [Exercise 2](#exercise-2)
 
 If you have any questions regarding the assessment, please feel free to reach out to [Mike Nguyen](https://github.com/miken) at miken@effectivephilanthropy.org.
 
@@ -90,4 +91,36 @@ You're also interested in knowing more about the descriptive statistics of the c
 ```python
 # mean is the DataFrame generated from Task 1
 stats = mean.describe()
+```
+
+# Exercise 2
+Next, given the set of 9 ratings per question, you're interested in finding out the [percentile](http://en.wikipedia.org/wiki/Percentile) of each client rating. For example, the following table shows the client ratings and their percentiles for the `comimp` question.
+
+Client           | comimp             | comimp_pct  |     
+-----------------|--------------------|-------------|
+Arlington 14S    | 6.5151515151515156 | 94.44444444 |
+Boylston 14S     | 5.4745762711864403 | 16.66666667 |
+Clarendon 14S    | 5.7875647668393784 | 50          |
+Dartmouth 14S    | 6.2045454545454541 | 72.22222222 |
+Kenmore 14S      | 5.7307692307692308 | 27.77777778 |
+Marlborough 14S  | 4.7705627705627709 | 5.555555556 |
+Peabody 14S      | 5.8947368421052628 | 61.11111111 |
+Roxbury 14S      | 6.2884615384615383 | 83.33333333 |
+Tremont 14S      | 5.7445652173913047 | 38.88888889 |
+
+Given the `mean.csv` file that you have generated in Exercise 1, now stored in `exercise2/input/mean.csv`, generate a CSV file `pct.csv` that stores the percentile ratings for each client for the 9 survey questions. Refer to `exercise2/output/pct.csv` for a preview of how the output file should look like.
+
+**Hint**: `scipy` has a function called [percentileofscore](http://docs.scipy.org/doc/scipy-0.7.x/reference/generated/scipy.stats.percentileofscore.html) that should make percentile calculation easy:
+```python
+from scipy.stats import percentileofscore
+
+# If you have the list of 9 client ratings stored in rating_list
+# you can do the following loop:
+percentile_list = []
+for r in rating_list:
+    percentile = percentileofscore(rating_list, r, kind='mean')
+    percentile_list.append(percentile)
+    
+# Now you have 9 percentile ranks for a given question
+# stored in percentile_list
 ```
