@@ -9,7 +9,7 @@ It is recommended that the candidate has familiarity with the following software
 
 If you have any questions regarding the assessment, please feel free to reach out to [Mike Nguyen](https://github.com/miken) at miken@effectivephilanthropy.org.
 
-For more information about CEP and our work, please visit effectivephilanthropy.org
+For more information about CEP and our work, please visit www.effectivephilanthropy.org
 
 # Instructions
 For each exercise folder, there are three subfolders within:
