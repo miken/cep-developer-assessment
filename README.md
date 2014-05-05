@@ -11,6 +11,7 @@ It is recommended that the candidate has familiarity with statistics and the fol
 * [Exercise 1](#exercise-1)
   * [Task 1](#task-1)
   * [Task 2](#task-2)
+* [Exercise 2](#exercise-2)
 
 If you have any questions regarding the assessment, please feel free to reach out to [Mike Nguyen](https://github.com/miken) at miken@effectivephilanthropy.org.
 
