@@ -1,11 +1,15 @@
 cep-developer-assessment
 ========================
 
-This assessment contains three exercises that will help CEP evaluate a candidate's skills in software development that are relevant to CEP's work. Besides efficiency, CEP also looks for clarity in code submissions.
+This assessment evaluates a candidate's software development skills relevant to CEP's work. Besides efficiency, CEP also looks for clarity in code submissions.
 
-The assessment has three exercises that test a candidate's ability to work with CSV files, manipulate CSV data, and write JSON output files using existing Python packages.
+The assessment has three exercises that test a candidate's ability to manipulate CSV data and write JSON outputs using existing Python packages.
 
 It is recommended that the candidate has familiarity with the following software packages: `numpy`, `scipy`, and `pandas`. These packages will simplify the work required in the assessment.
+
+If you have any questions regarding the assessment, please feel free to reach out to Mike Nguyen at miken@effectivephilanthropy.org.
+
+For more information about CEP and our work, please visit effectivephilanthropy.org
 
 # Instructions
 For each exercise folder, there are three subfolders within:
@@ -15,8 +19,6 @@ For each exercise folder, there are three subfolders within:
 * `submissions`: This is where you can save your program in the format `your_name.py`
 
 To submit your codes, first, fork this repo, add your own program files in the `/submissions` folder for each exercise, then make a pull request letting us know that you're submitting your files.
-
-If you have any questions regarding the assessment, please feel free to reach out to Mike Nguyen at miken@effectivephilanthropy.org.
 
 # Exercise 1
 In spring 2014, CEP helped 9 foundation clients administer a survey to their grantees. At the end of the survey, CEP analysts cleaned and sent the data to you in a CSV format. The file is called `xl.csv` and saved in the `exercise1/input` folder. This file contains all survey responses, with each column representing a survey question and each row a set of responses from a grantee.
