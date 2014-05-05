@@ -5,13 +5,14 @@ This assessment evaluates a candidate's software development skills relevant to 
 
 The assessment has three exercises that test a candidate's ability to manipulate CSV data and write JSON outputs using existing Python packages.
 
-It is recommended that the candidate has familiarity with statistics and the following Python packages: `numpy`, `scipy`, and `pandas`.
+We recommend that the candidate has familiarity with statistics and the following Python packages: `numpy`, `scipy`, and `pandas`.
 
 * [Instructions](#instructions)
 * [Exercise 1](#exercise-1)
   * [Task 1](#task-1)
   * [Task 2](#task-2)
 * [Exercise 2](#exercise-2)
+* [Exercise 3](#exercise-3)
 
 If you have any questions regarding the assessment, please feel free to reach out to [Mike Nguyen](https://github.com/miken) at miken@effectivephilanthropy.org.
 
@@ -124,3 +125,63 @@ for r in rating_list:
 # Now you have 9 percentile ranks for a given question
 # stored in percentile_list
 ```
+
+# Exercise 3
+At CEP, we deliver results to clients using an online reporting platform. This platform reads client data from a JSON file and renders these data points as charts and objects. 
+
+You're now interested in creating a JSON file to render a report for the client Tremont 14S. A JSON file for Tremont 14S, with only one percentile chart in report for the question `sample_question` may look as follows:
+```
+{
+    "version":"1.0",
+    "reports":
+    [
+        {
+            "name":"Tremont 14S Report",
+            "title":"Tremont 14S Report",
+            "cohorts": [],
+            "segmentations": [],
+            "elements":{
+                "sample_question":{
+                    "type":"percentileChart",
+                    "absolutes":[5, 6, 6, 6, 7],
+                    "current": {
+                        "name": "2014",
+                        "value": 6.09,
+                        "percentage": 42
+                    },
+                    "cohorts": [],
+                    "past_results":[],
+                    "segmentations": []
+                }
+            }
+        }
+    ]
+}
+
+```
+Here's an explanation for all the keys in the JSON object above:
+* `version`: accepts a string value. You may input "1.0" here.
+* `reports`: accepts a JSON array of report objects. Each report object contains the following keys:
+  * `name`: accepts a string value for the name of the report. You may use "Tremont 14S Report"
+  * `title`: accepts a string value for the name of the report. You may use "Tremont 14S Report"
+  * `cohorts`: accepts a JSON array of strings. For simplicity's sake, you may input an empty array here
+  * `segmentations`: accepts a JSON array of strings. For simplicity's sake, you may input an empty array here
+  * `elements`: accepts a JSON object. This object contains all relevant data points for the reports. Each key represents the question column name and its corresponding value is a chart object. The chart object contains the following keys:
+    * `type`: accepts a string value. You may use "percentileChart"
+    * `absolutes`: accepts an array of five numeric values. These values represent the 0th, 25th, 50th, 75th, and 100th percentile values for the given question
+    * `current`: accepts a JSON object. This object has three keys:
+      * `name`: accepts a string value. You may use "2014"
+      * `value`: accepts a numeric value. This is the mean rating for Tremont 14S for the question `sample_question`.
+      * `percentage`: accepts a numeric value. This is the percentile rating for Tremont 14S for the question `sample_question`.
+    * `cohorts`: accepts a JSON array of strings. For simplicity's sake, you may input an empty array here
+    * `past_results`: accepts a JSON array of strings. For simplicity's sake, you may input an empty array here
+    * `segmentations`: accepts a JSON array of strings. For simplicity's sake, you may input an empty array here
+
+For this exercise, you will read the three files produced in exercises 1 and 2: `mean.csv`, `stats.csv`, and `pct.csv`. These files are saved in the `exercise3/input/` folder as well.
+
+From these 3 files, you can extract the following data points for Tremont 14S:
+* `mean.csv`: Mean ratings for Tremont 14S on the 9 questions.
+* `pct.csv`: Percentile ratings for Tremont 14S on the 9 questions.
+* `stats.csv`: The quartile values for the set of 9 client ratings on the 9 questions.
+
+Using these data points, create 9 percentile chart objects under the `elements` key of the JSON object above. Refer to `exercise3/output/output.json` for a preview of how the output file should look like.
