@@ -1,6 +1,8 @@
 cep-developer-assessment
 ========================
 
+> The assessment is now closed and defunct.
+
 This assessment evaluates a candidate's software development skills relevant to CEP's work. Besides efficiency, CEP also looks for clarity in code submissions.
 
 The assessment has three exercises that test a candidate's ability to manipulate CSV data and write JSON outputs using existing Python packages.
