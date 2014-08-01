@@ -80,13 +80,6 @@ Tremont 14S      | 5.7445652173913047
 ## Task 1
 Read file `xl.csv`, look at the 9 question columns above, and recode any `77` and `88` values as blank. After recoding, calculate the mean rating for each funder for each of the 9 questions. Save your output as `mean.csv`. You may refer to `exercise1/output/mean.csv` for a preview of how the output file should look like.
 
-**Hint**: If you're familiar with `pandas`, the following line should help:
-```python
-# data is the recoded DataFrame with the 9 question columns
-# that you're interested in
-mean = data.groupby('fdntext').mean()
-```
-
 ## Task 2
 You're also interested in knowing more about the descriptive statistics of the client ratings; you want to know the highest, lowest, median, and quartile ratings for each of the 9 questions. Generate a CSV file `stats.csv` that will include these descriptive statistics. Refer to `exercise1/output/stats.csv` for a preview of how the output file should look like.
 
