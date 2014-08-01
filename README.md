@@ -90,12 +90,6 @@ mean = data.groupby('fdntext').mean()
 ## Task 2
 You're also interested in knowing more about the descriptive statistics of the client ratings; you want to know the highest, lowest, median, and quartile ratings for each of the 9 questions. Generate a CSV file `stats.csv` that will include these descriptive statistics. Refer to `exercise1/output/stats.csv` for a preview of how the output file should look like.
 
-**Hint**: Using `pandas`, the following line should help:
-```python
-# mean is the DataFrame generated from Task 1
-stats = mean.describe()
-```
-
 # Exercise 2
 Next, given the set of 9 ratings per question, you're interested in finding out the [percentile](http://en.wikipedia.org/wiki/Percentile) of each client rating. For example, the following table shows the client ratings and their percentiles for the `comimp` question.
 
@@ -112,21 +106,6 @@ Roxbury 14S      | 6.2884615384615383 | 83.33333333 |
 Tremont 14S      | 5.7445652173913047 | 38.88888889 |
 
 Given the `mean.csv` file that you have generated in Exercise 1, now stored in `exercise2/input/mean.csv`, generate a CSV file `pct.csv` that stores the percentile ratings for each client for the 9 survey questions. Refer to `exercise2/output/pct.csv` for a preview of how the output file should look like.
-
-**Hint**: `scipy` has a function called [percentileofscore](http://docs.scipy.org/doc/scipy-0.7.x/reference/generated/scipy.stats.percentileofscore.html) that should make percentile calculation easy:
-```python
-from scipy.stats import percentileofscore
-
-# If you have the list of 9 client ratings stored in rating_list
-# you can do the following loop:
-percentile_list = []
-for r in rating_list:
-    percentile = percentileofscore(rating_list, r, kind='mean')
-    percentile_list.append(percentile)
-    
-# Now you have 9 percentile ranks for a given question
-# stored in percentile_list
-```
 
 # Exercise 3
 At CEP, we deliver results to clients using an online reporting platform. This platform reads client data from a JSON file and renders these data points as charts and objects. 
@@ -187,7 +166,5 @@ From these 3 files, you can extract the following data points for Tremont 14S:
 * `stats.csv`: The quartile values for the set of 9 client ratings on the 9 questions.
 
 Using these data points, create 9 percentile chart objects under the `elements` key of the JSON object above. Refer to `exercise3/output/output.json` for a preview of how the output file should look like.
-
-**Hint**: The hint for this exercise is buried deep somewhere within this repository. If you're familiar with GitHub, you might be able to find it.
 
 Good luck! :pray:
